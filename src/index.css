@@ -1,10 +1,17 @@
 :root {
+
   --color-purple: rgb(180, 28, 139);
+
   --color-green: rgb(119, 212, 0);
-  --color-white-bg: #f3f3f4;
+
+  --color-white-bg: rgb(243, 243, 244);
+
   --color-border: rgb(227, 227, 228);
+
   --color-black: rgb(63, 63, 63);
+
   --color-black-strong: rgb(51, 51, 51);
+
   --color-gray: rgb(129, 129, 129);
 }
 
@@ -13,12 +20,13 @@ html {
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  outline: 0;
   box-sizing: border-box;
+  font-size: 1.6rem;
+  margin: 0;
+  outline: 0;
+  padding: 0;
 }
+
 body {
   min-height: 100vh;
 }
-
