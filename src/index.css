@@ -4,7 +4,7 @@
 
   --color-green: rgb(119, 212, 0);
 
-  --color-white-bg: rgb(243, 243, 244);
+  --color-white-bg: rgb(255, 255, 255);
 
   --color-border: rgb(227, 227, 228);
 
@@ -29,4 +29,10 @@ html {
 
 body {
   min-height: 100vh;
+  background-color: #F3F3F4;
+}
+
+main {
+  display: flex;
+  justify-content: center;
 }

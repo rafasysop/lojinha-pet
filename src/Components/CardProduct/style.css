@@ -1,0 +1,32 @@
+.card-content {
+  /* box-shadow: 4px 8px 16px var(--color-gray); */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--color-border);
+  background-color: white;
+  width: 254px;
+  height: 440px;
+  margin: 0 20px 25px 0;
+  padding: 5px 10px 15px 10px;
+}
+
+.product-title {
+  font-weight: 500;
+  font-size: 1.9rem;
+  margin-top: -40%;
+  text-align: left;
+}
+
+.product-img {
+  width: 150px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 2.2rem;
+  font-weight: 700;
+}

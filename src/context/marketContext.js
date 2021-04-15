@@ -1,14 +1,18 @@
-const InitialState = {
-  market: [
-    {
-      product_id: 5,
-      product_name: 'algum',
-      product_description: 'alguma descrição',
-      product_category: 'brinquedos',
-      product_discount: 0,
-      product_price: 69.99,
-      product_amount: 8,
-      user_observation: 'alguma observação',
-    },
-  ],
+import React, { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
+
+const InitialState = [];
+
+export const marketCtx = createContext(InitialState);
+
+const MarketContext = ({ children }) => {
+  const [market, setMarket] = useState(InitialState);
+
+  return <marketCtx.Provider value={{ market }}>{children}</marketCtx.Provider>;
 };
+
+MarketContext.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default MarketContext;

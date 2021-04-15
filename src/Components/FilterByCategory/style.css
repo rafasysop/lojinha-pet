@@ -1,0 +1,33 @@
+.nav-category {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--color-white-bg);
+
+}
+
+.nav-category ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-category ul li {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 20px 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .3s ease;
+  text-transform: capitalize;
+}
+
+.nav-category ul li:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.li-active {
+  color: var(--color-purple) ;
+  font-weight: 900 !important;
+  text-decoration: underline !important;
+}
