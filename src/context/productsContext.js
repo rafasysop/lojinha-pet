@@ -9,6 +9,17 @@ const ProductsContext = ({ children }) => {
   const [listProducts, setListPoducts] = useState([]);
   const [category, setCategory] = useState('Sugestão do Vendedor');
   const [filterProduct, setFilterProduct] = useState('');
+  const [showProductDetails, setShowProductDetails] = useState(false);
+  const [productDetails, setProductDetails] = useState('');
+
+  const handleShowProductDetails = (id) => {
+    setShowProductDetails((c) => !c);
+    if (!showProductDetails) {
+      setProductDetails(id);
+    } else {
+      setProductDetails('');
+    }
+  };
 
   useEffect(() => {
     const exec = async () => {
@@ -58,6 +69,9 @@ const ProductsContext = ({ children }) => {
         listProducts,
         setCategory,
         filterProduct,
+        handleShowProductDetails,
+        showProductDetails,
+        productDetails,
         setFilterProduct,
         search,
       }}

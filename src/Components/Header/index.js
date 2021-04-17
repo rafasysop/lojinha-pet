@@ -10,10 +10,9 @@ function Header() {
   const { market } = useContext(marketCtx);
   console.log('maeket', market);
   const totalPrice = market?.reduce(
-    (total, item) => parseFloat(total) + parseFloat(item.product_price),
-    [0],
+    (total, item) => total + +item.price * item.numberAddProduct,
+    0,
   );
-  console.log(market?.filter((item, _, self) => _ === self.indexOf(item)));
   return (
     <header className="header-container">
       <div className="logo">
@@ -46,9 +45,23 @@ function Header() {
             }}
           />
           <div>
-            <p>{market.length} Produtos no Carrinho</p>
+            <p>
+              {
+                market.filter(
+                  (item, index, self) =>
+                    index === self.findIndex((t) => t.id === item.id),
+                ).length
+              }{' '}
+              Produtos no Carrinho
+            </p>
             <p className="total-price">
-              <strong>{market && `R$ ${totalPrice}`}</strong>
+              <strong>
+                {market &&
+                  totalPrice.toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+              </strong>
             </p>
           </div>
         </div>

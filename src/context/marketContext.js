@@ -8,7 +8,15 @@ export const marketCtx = createContext(InitialState);
 const MarketContext = ({ children }) => {
   const [market, setMarket] = useState(InitialState);
 
-  return <marketCtx.Provider value={{ market }}>{children}</marketCtx.Provider>;
+  const addProductToCart = (product) => {
+    setMarket([...market, product]);
+  };
+
+  return (
+    <marketCtx.Provider value={{ market, addProductToCart }}>
+      {children}
+    </marketCtx.Provider>
+  );
 };
 
 MarketContext.propTypes = {

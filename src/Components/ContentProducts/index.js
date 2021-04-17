@@ -12,14 +12,18 @@ function ContentProducts() {
       {listProducts ? (
         <>
           <SearchProducts />
-          <h1 className="title-page">{category}</h1>
+          <h1 className="title-page">
+            {listProducts.length === 0 ? 'Nenhum Produto encontrado' : category}
+          </h1>
           <div className="card-container">
             {listProducts.map((item, index) => {
               if (index > 10) return;
               return (
                 <CardProduct
                   key={item.id}
+                  id={item.id}
                   title={item.title}
+                  discount={item.discount}
                   img={item.thumbnail}
                   price={item.price}
                 />
