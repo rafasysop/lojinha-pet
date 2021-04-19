@@ -18,6 +18,7 @@ function CardProduct({ id, title, img, price, discount }) {
       {discount ? (
         <div className="price">
           <p>
+            <div className="discount-value">{discount}% OFF</div>
             <span className="precede-preco">De:</span>{' '}
             <span className="desconto">
               {price.toLocaleString('pt-br', {

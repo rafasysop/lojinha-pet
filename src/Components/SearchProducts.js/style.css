@@ -22,3 +22,9 @@
   color: var(--color-black);
   transform: scale(1.2);
 }
+
+@media screen and (max-width: 840px) {
+  .input-search{
+    width: 90%;
+  }
+}

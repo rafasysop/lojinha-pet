@@ -46,7 +46,7 @@
   list-style: none;
 }
 
-ul li:nth-child(1) {
+.header-delivery li:nth-child(1) {
   margin-right: 20px;
 }
 
@@ -68,4 +68,52 @@ ul li:nth-child(1) {
 .total-price {
   color: var(--color-purple);
   font-weight: 700;
+}
+
+@media screen and (max-width: 840px) {
+  .header-container {
+    width: 100vw;
+    padding: 10px 5px;
+  }
+
+  .header-info {
+    width: 70%;
+    padding: 5px;
+  }
+
+  .logo img {
+    width: 144px;
+  }
+  .market {
+    color: white;
+    position: fixed;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    bottom: 0;
+    right: 5vw;
+    width: 90vw;
+    margin-left: -3%;
+    z-index: 888;
+    background-color: var(--color-purple);
+    min-height: 0;
+    padding: 10px;
+  }
+  .market > div {
+    width: 100%;
+  }
+
+  .market > div > div {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .total-price {
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+  }
 }
