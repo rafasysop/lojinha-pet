@@ -12,7 +12,6 @@ function Header() {
     (total, item) => total + item.numberAddProduct,
     0,
   );
-  console.log(totalProducts);
   const totalPrice = market?.reduce(
     (total, item) => total + +item.price * item.numberAddProduct,
     0,
@@ -50,8 +49,10 @@ function Header() {
             }}
           />
           <div>
-            <p>{totalProducts} Produtos no Carrinho</p>
-            <p className="total-price">
+            <p data-testid="number-products-cart">
+              {totalProducts} Produtos no Carrinho
+            </p>
+            <p className="total-price" data-testid="total-price-cart">
               <strong>
                 {market &&
                   totalPrice.toLocaleString('pt-br', {

@@ -5,8 +5,8 @@ const InitialState = [];
 
 export const marketCtx = createContext(InitialState);
 
-const MarketContext = ({ children }) => {
-  const [market, setMarket] = useState(InitialState);
+const MarketContext = ({ children, value = null }) => {
+  const [market, setMarket] = useState(value ? value : InitialState);
 
   const addProductToCart = (product) => {
     setMarket([...market, product]);
@@ -21,6 +21,7 @@ const MarketContext = ({ children }) => {
 
 MarketContext.propTypes = {
   children: PropTypes.node.isRequired,
+  value: PropTypes.array,
 };
 
 export default MarketContext;
