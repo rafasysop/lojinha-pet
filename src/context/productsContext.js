@@ -41,12 +41,9 @@ const ProductsContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log(category);
     if (category === 'Sugestão do Vendedor') {
-      console.log('setList');
       setListPoducts(products);
       return;
-      //.filter((item) => item.installments?.rate >= 13.9)
     }
     setListPoducts(products.filter((item) => item.category_lj === category));
   }, [category, products]);

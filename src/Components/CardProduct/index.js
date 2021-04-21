@@ -5,7 +5,7 @@ import './style.css';
 import { FaCartPlus } from 'react-icons/fa';
 import { productsCtx } from '../../context/productsContext';
 
-function CardProduct({ id, title, img, price, discount }) {
+function CardProduct({ id, title, img, price, discount = 0 }) {
   const { handleShowProductDetails } = useContext(productsCtx);
   return (
     <div className="card-content">
@@ -17,7 +17,7 @@ function CardProduct({ id, title, img, price, discount }) {
       <h2 className="product-title">{title}</h2>
       {discount ? (
         <div className="price">
-          <p>
+          <div>
             <div className="discount-value">{discount}% OFF</div>
             <span className="precede-preco">De:</span>{' '}
             <span className="desconto">
@@ -32,7 +32,7 @@ function CardProduct({ id, title, img, price, discount }) {
               style: 'currency',
               currency: 'BRL',
             })}
-          </p>
+          </div>
           <FaCartPlus
             className="cart-buy-icon"
             onClick={() => handleShowProductDetails(id)}
@@ -59,7 +59,7 @@ CardProduct.propTypes = {
   title: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  discount: PropTypes.number.isRequired,
+  discount: PropTypes.number,
 };
 
 export default CardProduct;

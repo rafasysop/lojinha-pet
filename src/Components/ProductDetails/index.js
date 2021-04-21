@@ -16,20 +16,21 @@ function ProductDetails({ id }) {
   return (
     <div className="product-details-container">
       <button onClick={handleShowProductDetails} className="goBack">
-        {' '}
-        <IoChevronBackCircle className="goBack-icon" /> Voltar{' '}
+        <IoChevronBackCircle className="goBack-icon" /> Voltar
+      </button>
+      <button
+        onClick={handleShowProductDetails}
+        className="product-details-close"
+      >
+        <IoClose className="product-details-close-icon" />
       </button>
       <div className="product-details-content">
-        <button
-          onClick={handleShowProductDetails}
-          className="product-details-close"
-        >
-          <IoClose className="product-details-close-icon" />
-        </button>
         <div className="product-details">
           <div className="product-details-img-container">
-            {product.discount && (
+            {product.discount ? (
               <div className="discount-value">{product.discount}% OFF</div>
+            ) : (
+              ''
             )}
             <img
               className="product-details-img"
@@ -74,6 +75,9 @@ function ProductDetails({ id }) {
                   addProductToCart({
                     ...product,
                     numberAddProduct: numberOfProduct,
+                    price: product.discount
+                      ? product.price - (product.price * product.discount) / 100
+                      : product.price,
                   });
                   handleShowProductDetails();
                 }}
@@ -83,8 +87,9 @@ function ProductDetails({ id }) {
                 <span>
                   {product.discount
                     ? (
-                        product.price -
-                        (product.price * product.discount) / 100
+                        (product.price -
+                          (product.price * product.discount) / 100) *
+                        numberOfProduct
                       ).toLocaleString('pt-br', {
                         style: 'currency',
                         currency: 'BRL',

@@ -14,7 +14,7 @@ function SearchProducts() {
         value={filterProduct}
         onChange={({ target: { value } }) => setFilterProduct(value)}
         onKeyPress={({ key }) => key === 'Enter' && search()}
-        onReset={() => search()}
+        onTouchCancel={(e) => console.log(e)}
       />
       <button className="search-btn" type="button" onClick={search}>
         <FaSearch style={{ fontSize: '20px' }} />

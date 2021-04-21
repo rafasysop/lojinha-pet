@@ -8,7 +8,11 @@ import { marketCtx } from '../../context/marketContext';
 
 function Header() {
   const { market } = useContext(marketCtx);
-  console.log('maeket', market);
+  const totalProducts = market?.reduce(
+    (total, item) => total + item.numberAddProduct,
+    0,
+  );
+  console.log(totalProducts);
   const totalPrice = market?.reduce(
     (total, item) => total + +item.price * item.numberAddProduct,
     0,
@@ -39,21 +43,14 @@ function Header() {
       <div className="market">
         <div>
           <FaShoppingCart
+            className="market-cart-icon"
             style={{
               cssFloat: 'left',
               marginRight: '5px',
             }}
           />
           <div>
-            <p>
-              {
-                market.filter(
-                  (item, index, self) =>
-                    index === self.findIndex((t) => t.id === item.id),
-                ).length
-              }{' '}
-              Produtos no Carrinho
-            </p>
+            <p>{totalProducts} Produtos no Carrinho</p>
             <p className="total-price">
               <strong>
                 {market &&

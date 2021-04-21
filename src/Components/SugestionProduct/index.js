@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import './style.css';
 import CardProduct from '../CardProduct';
 import { productsCtx } from '../../context/productsContext';
@@ -27,7 +27,7 @@ function SugestionProduct() {
 
       {!isSearch &&
         allCategory?.map((categoryName, index) => (
-          <>
+          <Fragment key={index}>
             <h1 className="title-category">{categoryName}</h1>
             <div key={index} className="card-container">
               {listProducts
@@ -46,7 +46,7 @@ function SugestionProduct() {
                   );
                 })}
             </div>
-          </>
+          </Fragment>
         ))}
     </>
   );
