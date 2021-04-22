@@ -1,4 +1,9 @@
 # Teste Softcom Challenge - Front-end com React - "Lojinha" Ecommerce
+
+## Imagens do resultado
+![Lojinha](lojinha.png)
+
+![Lojinha](lojinha-mobile.png)
 ## Descrição do Projeto
 
 Realizei um teste técnico para criar uma loja online em react clonando a UI/Design do [Figma](https://www.figma.com/file/ebcFb6dxwj4JkN7vENzgeQ/Desafio-UX?node-id=3579%3A312), Utilizei as tecnologias:
