@@ -12,18 +12,19 @@ Realizei um teste técnico para criar uma loja online em react clonando a UI/Des
 
 
 # Clone este repositório
-$ git clone <https://github.com/rafasysop/lojinha-pet>
+$ `git clone git@github.com:rafasysop/lojinha-pet.git`
+ou acesse <https://github.com/rafasysop/lojinha-pet/archive/refs/heads/main.zip> e baixe o arquivo zip.
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd lojinha-pet
+$ `cd lojinha-pet`
 
 # Instale as dependências
-$ npm install
+$ `npm install`
 
 # Execute o Json-Server - O servidor inciará na porta:3004
-$ npm run api
+$ `npm run api`
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run start
+$ `npm run start`
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000>
