@@ -13,10 +13,13 @@ function CardProduct({ id, title, img, price, discount = 0 }) {
         className="product-img"
         src={img}
         alt={title.substr(0, 22) + '...'}
+        data-testid="img-card"
       />
-      <h2 className="product-title">{title}</h2>
+      <h2 className="product-title" data-testid="title-card">
+        {title}
+      </h2>
       {discount ? (
-        <div className="price">
+        <div className="price" data-testid="price-card">
           <div>
             <div className="discount-value">{discount}% OFF</div>
             <span className="precede-preco">De:</span>{' '}
@@ -35,6 +38,7 @@ function CardProduct({ id, title, img, price, discount = 0 }) {
           </div>
           <FaCartPlus
             className="cart-buy-icon"
+            data-testid="button-cart-buy"
             onClick={() => handleShowProductDetails(id)}
           />
         </div>
