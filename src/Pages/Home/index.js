@@ -8,11 +8,8 @@ import ProductDetails from '../../Components/ProductDetails';
 import Footer from '../../Components/Footer';
 
 function Home() {
-  const {
-    showProductDetails,
-    productDetails,
-    handleShowProductDetails,
-  } = useContext(productsCtx);
+  const { showProductDetails, productDetails, handleShowProductDetails } =
+    useContext(productsCtx);
   return (
     <div className="home-container">
       <Header />
