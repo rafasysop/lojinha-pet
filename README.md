@@ -26,10 +26,6 @@ $ `cd lojinha-pet`
 # Instale as dependências
 $ `npm install`
 
-# É necessário executar o json-server
-$ `npm api`
-
-
 # Execute o Json-Server - O servidor inciará na porta:3004
 $ `npm run api`
 
